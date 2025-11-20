@@ -1,0 +1,32 @@
+import { dfdlT } from "@monstermann/dfdl"
+
+/**
+ * `Number.limitPrecision(target, precision)`
+ *
+ * Rounds `target` to the specified number of decimal places defined by `precision`.
+ *
+ * ## Example
+ *
+ * ```ts
+ * import { Number } from "@monstermann/number";
+ *
+ * Number.limitPrecision(3.14159, 2); // 3.14
+ * Number.limitPrecision(2.7182818, 3); // 2.718
+ * Number.limitPrecision(123.456, 0); // 123
+ * ```
+ *
+ * ```ts
+ * import { Number } from "@monstermann/number";
+ *
+ * pipe(3.14159, Number.limitPrecision(2)); // 3.14
+ * pipe(2.7182818, Number.limitPrecision(3)); // 2.718
+ * pipe(123.456, Number.limitPrecision(0)); // 123
+ * ```
+ */
+export const limitPrecision: {
+    (precision: number): (target: number) => number
+    (target: number, precision: number): number
+} = dfdlT((target: number, precision: number): number => {
+    precision = 10 ** precision
+    return Math.round(target * precision) / precision
+}, 2)

@@ -1,0 +1,33 @@
+import { dfdlT } from "@monstermann/dfdl"
+
+/**
+ * `Number.isInRange(target, start, end)`
+ *
+ * Returns `true` if `target` is within the range between `start` and `end` (inclusive), otherwise `false`. The order of `start` and `end` does not matter.
+ *
+ * ## Example
+ *
+ * ```ts
+ * import { Number } from "@monstermann/number";
+ *
+ * Number.isInRange(5, 1, 10); // true
+ * Number.isInRange(0, 1, 10); // false
+ * Number.isInRange(5, 10, 1); // true
+ * Number.isInRange(5, 5, 10); // true
+ * ```
+ *
+ * ```ts
+ * import { Number } from "@monstermann/number";
+ *
+ * pipe(5, Number.isInRange(1, 10)); // true
+ * pipe(0, Number.isInRange(1, 10)); // false
+ * pipe(5, Number.isInRange(10, 1)); // true
+ * pipe(5, Number.isInRange(5, 10)); // true
+ * ```
+ */
+export const isInRange: {
+    (start: number, end: number): (target: number) => boolean
+    (target: number, start: number, end: number): boolean
+} = dfdlT((target: number, start: number, end: number): boolean => {
+    return target >= Math.min(start, end) && target <= Math.max(start, end)
+}, 3)
