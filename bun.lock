@@ -20,7 +20,7 @@
     },
     "packages/number": {
       "name": "@monstermann/number",
-      "version": "0.0.0",
+      "version": "0.0.1",
       "dependencies": {
         "@monstermann/dfdl": "^0.1.0",
         "type-fest": "^4.41.0",
@@ -28,7 +28,7 @@
     },
     "packages/unplugin-number": {
       "name": "@monstermann/unplugin-number",
-      "version": "0.0.0",
+      "version": "0.0.1",
       "dependencies": {
         "@monstermann/tree-shake-import-namespaces": "^0.2.2",
         "unplugin": "^2.3.4",
