@@ -3,6 +3,9 @@
   "configVersion": 1,
   "workspaces": {
     "": {
+      "dependencies": {
+        "eslint": "^9.39.2",
+      },
       "devDependencies": {
         "@monstermann/barrels": "^0.3.0",
         "@monstermann/barrels-flat": "^0.3.0",
