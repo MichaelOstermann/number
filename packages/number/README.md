@@ -325,6 +325,133 @@ pipe(2, Number.gte(7)); // false
 pipe(4, Number.gte(4)); // true
 ```
 
+### intOr
+
+```ts
+function Number.intOr<T, U>(
+    target: T,
+    or: U,
+): Extract<T, number> | U
+```
+
+Returns the numeric value of `target` if it's an integer, otherwise returns the fallback value `or`.
+
+#### Example
+
+```ts [data-first]
+import { Number } from "@monstermann/number";
+
+Number.intOr(42, 0); // 42
+Number.intOr(-7, 0); // -7
+Number.intOr(3.14, 0); // 0
+Number.intOr(NaN, 0); // 0
+Number.intOr(Infinity, 0); // 0
+Number.intOr("hello", 0); // 0
+```
+
+```ts [data-last]
+import { Number } from "@monstermann/number";
+
+pipe(42, Number.intOr(0)); // 42
+pipe(-7, Number.intOr(0)); // -7
+pipe(3.14, Number.intOr(0)); // 0
+pipe(NaN, Number.intOr(0)); // 0
+pipe(Infinity, Number.intOr(0)); // 0
+pipe("hello", Number.intOr(0)); // 0
+```
+
+### intOrElse
+
+```ts
+function Number.intOrElse<T, U>(
+    target: T,
+    orElse: (value: NoInfer<T>) => U,
+): Extract<T, number> | U
+```
+
+Returns the numeric value of `target` if it's an integer, otherwise calls the `orElse` function with the original value and returns its result.
+
+#### Example
+
+```ts [data-first]
+import { Number } from "@monstermann/number";
+
+Number.intOrElse(42, () => 0); // 42
+Number.intOrElse(-7, () => 0); // -7
+Number.intOrElse(3.14, () => 0); // 0
+Number.intOrElse(NaN, () => 0); // 0
+Number.intOrElse(Infinity, (val) => 100); // 100
+Number.intOrElse("hello", (val) => val.length); // 5
+```
+
+```ts [data-last]
+import { Number } from "@monstermann/number";
+
+pipe(
+    42,
+    Number.intOrElse(() => 0),
+); // 42
+
+pipe(
+    -7,
+    Number.intOrElse(() => 0),
+); // -7
+
+pipe(
+    3.14,
+    Number.intOrElse(() => 0),
+); // 0
+
+pipe(
+    NaN,
+    Number.intOrElse(() => 0),
+); // 0
+
+pipe(
+    Infinity,
+    Number.intOrElse((val) => 100),
+); // 100
+
+pipe(
+    "hello",
+    Number.intOrElse((val) => val.length),
+); // 5
+```
+
+### intOrThrow
+
+```ts
+function Number.intOrThrow<T>(target: T): Extract<T, number>
+```
+
+Returns the numeric value of `target` if it's an integer, otherwise throws an error.
+
+#### Example
+
+```ts [data-first]
+import { Number } from "@monstermann/number";
+
+Number.intOrThrow(42); // 42
+Number.intOrThrow(-7); // -7
+Number.intOrThrow(0); // 0
+Number.intOrThrow(3.14); // throws Error
+Number.intOrThrow(NaN); // throws Error
+Number.intOrThrow(Infinity); // throws Error
+Number.intOrThrow("hello"); // throws Error
+```
+
+```ts [data-last]
+import { Number } from "@monstermann/number";
+
+pipe(42, Number.intOrThrow()); // 42
+pipe(-7, Number.intOrThrow()); // -7
+pipe(0, Number.intOrThrow()); // 0
+pipe(3.14, Number.intOrThrow()); // throws Error
+pipe(NaN, Number.intOrThrow()); // throws Error
+pipe(Infinity, Number.intOrThrow()); // throws Error
+pipe("hello", Number.intOrThrow()); // throws Error
+```
+
 ### is
 
 ```ts

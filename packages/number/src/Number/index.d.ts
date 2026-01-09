@@ -13,6 +13,9 @@ import { exp } from "./exp.js";
 import { floor } from "./floor.js";
 import { gt } from "./gt.js";
 import { gte } from "./gte.js";
+import { intOr } from "./intOr.js";
+import { intOrElse } from "./intOrElse.js";
+import { intOrThrow } from "./intOrThrow.js";
 import { is } from "./is.js";
 import { isBigInt } from "./isBigInt.js";
 import { isFinite } from "./isFinite.js";
@@ -45,6 +48,9 @@ declare namespace Number {
         floor,
         gt,
         gte,
+        intOr,
+        intOrElse,
+        intOrThrow,
         is,
         isBigInt,
         isFinite,
