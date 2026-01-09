@@ -10,6 +10,9 @@ import { clamp } from "./clamp.js";
 import { create } from "./create.js";
 import { div } from "./div.js";
 import { exp } from "./exp.js";
+import { floatOr } from "./floatOr.js";
+import { floatOrElse } from "./floatOrElse.js";
+import { floatOrThrow } from "./floatOrThrow.js";
 import { floor } from "./floor.js";
 import { gt } from "./gt.js";
 import { gte } from "./gte.js";
@@ -44,6 +47,9 @@ export const Number = {
     create,
     div,
     exp,
+    floatOr,
+    floatOrElse,
+    floatOrThrow,
     floor,
     gt,
     gte,
