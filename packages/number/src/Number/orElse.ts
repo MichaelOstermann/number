@@ -6,7 +6,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * ```ts
  * function Number.orElse<T, U>(
  *     target: T,
- *     orElse: (value: NoInfer<T>) => U,
+ *     orElse: (value: Exclude<T, number>) => U,
  * ): Extract<T, number> | U
  * ```
  *
@@ -49,10 +49,10 @@ import { dfdlT } from "@monstermann/dfdl"
  *
  */
 export const orElse: {
-    <T, U>(orElse: (value: NoInfer<T>) => U): (target: T) => Extract<T, number> | U
-    <T, U>(target: T, orElse: (value: NoInfer<T>) => U): Extract<T, number> | U
-} = dfdlT(<T, U>(target: T, orElse: (value: NoInfer<T>) => U): Extract<T, number> | U => {
+    <T, U>(orElse: (value: Exclude<T, number>) => U): (target: T) => Extract<T, number> | U
+    <T, U>(target: T, orElse: (value: Exclude<T, number>) => U): Extract<T, number> | U
+} = dfdlT(<T, U>(target: T, orElse: (value: Exclude<T, number>) => U): Extract<T, number> | U => {
     return typeof target === "number"
         ? target as Extract<T, number>
-        : orElse(target)
+        : orElse(target as Exclude<T, number>)
 }, 2)

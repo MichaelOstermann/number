@@ -3,7 +3,7 @@
 ```ts
 function Number.orElse<T, U>(
     target: T,
-    orElse: (value: NoInfer<T>) => U,
+    orElse: (value: Exclude<T, number>) => U,
 ): Extract<T, number> | U
 ```
 
