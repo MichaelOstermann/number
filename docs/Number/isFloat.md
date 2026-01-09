@@ -1,10 +1,10 @@
 # isFloat
 
 ```ts
-function Number.isFloat<T>(value: T): value is Float<T>
+function Number.isFloat(target: number): boolean
 ```
 
-Returns `true` if `value` is a finite floating-point number (not an integer), otherwise `false`. This function acts as a type guard.
+Returns `true` if `target` is a finite floating-point number (not an integer), otherwise `false`.
 
 ## Example
 

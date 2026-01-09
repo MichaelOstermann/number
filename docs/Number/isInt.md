@@ -1,10 +1,10 @@
 # isInt
 
 ```ts
-function Number.isInt<T>(value: T): value is Int<T>
+function Number.isInt(target: number): boolean
 ```
 
-Returns `true` if `value` is an integer, otherwise `false`. This function acts as a type guard.
+Returns `true` if `target` is an integer, otherwise `false`.
 
 ## Example
 

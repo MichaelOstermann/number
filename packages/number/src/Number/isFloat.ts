@@ -1,22 +1,13 @@
-import type { IsFloat } from "type-fest"
 import { dfdlT } from "@monstermann/dfdl"
-
-type Float<T> = T extends unknown
-    ? number extends T
-        ? T
-        : IsFloat<T> extends true
-            ? T
-            : never
-    : never
 
 /**
  * # isFloat
  *
  * ```ts
- * function Number.isFloat<T>(value: T): value is Float<T>
+ * function Number.isFloat(target: number): boolean
  * ```
  *
- * Returns `true` if `value` is a finite floating-point number (not an integer), otherwise `false`. This function acts as a type guard.
+ * Returns `true` if `target` is a finite floating-point number (not an integer), otherwise `false`.
  *
  * ## Example
  *
@@ -42,9 +33,9 @@ type Float<T> = T extends unknown
  *
  */
 export const isFloat: {
-    <T>(): (value: T) => value is Float<T>
-    <T>(value: T): value is Float<T>
-} = dfdlT(<T>(value: T): value is Float<T> => {
-    return Number.isFinite(value)
-        && !Number.isInteger(value)
+    (): (target: number) => boolean
+    (target: number): boolean
+} = dfdlT((target: number): boolean => {
+    return Number.isFinite(target)
+        && !Number.isInteger(target)
 }, 1)

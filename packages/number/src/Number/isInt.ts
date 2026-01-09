@@ -1,22 +1,13 @@
-import type { IsInteger } from "type-fest"
 import { dfdlT } from "@monstermann/dfdl"
-
-type Int<T> = T extends unknown
-    ? number extends T
-        ? T
-        : IsInteger<T> extends true
-            ? T
-            : never
-    : never
 
 /**
  * # isInt
  *
  * ```ts
- * function Number.isInt<T>(value: T): value is Int<T>
+ * function Number.isInt(target: number): boolean
  * ```
  *
- * Returns `true` if `value` is an integer, otherwise `false`. This function acts as a type guard.
+ * Returns `true` if `target` is an integer, otherwise `false`.
  *
  * ## Example
  *
@@ -44,8 +35,8 @@ type Int<T> = T extends unknown
  *
  */
 export const isInt: {
-    <T>(): (value: T) => value is Int<T>
-    <T>(value: T): value is Int<T>
-} = dfdlT(<T>(value: T): value is Int<T> => {
-    return Number.isInteger(value)
+    (): (target: number) => boolean
+    (target: number): boolean
+} = dfdlT((target: number): boolean => {
+    return Number.isInteger(target)
 }, 1)

@@ -7,7 +7,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * function Number.is(target: unknown): target is number
  * ```
  *
- * Returns `true` if `target` is a number, otherwise `false`. This function acts as a type guard.
+ * Returns `true` if `target` is a number, otherwise `false`.
  *
  * ## Example
  *

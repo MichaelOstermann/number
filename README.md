@@ -331,7 +331,7 @@ pipe(4, Number.gte(4)); // true
 function Number.is(target: unknown): target is number
 ```
 
-Returns `true` if `target` is a number, otherwise `false`. This function acts as a type guard.
+Returns `true` if `target` is a number, otherwise `false`.
 
 #### Example
 
@@ -363,7 +363,7 @@ pipe(null, Number.is()); // false
 function Number.isBigInt(target: unknown): target is bigint
 ```
 
-Returns `true` if `target` is a bigint, otherwise `false`. This function acts as a type guard.
+Returns `true` if `target` is a bigint, otherwise `false`.
 
 #### Example
 
@@ -418,10 +418,10 @@ pipe(NaN, Number.isFinite()); // false
 ### isFloat
 
 ```ts
-function Number.isFloat<T>(value: T): value is Float<T>
+function Number.isFloat(target: number): boolean
 ```
 
-Returns `true` if `value` is a finite floating-point number (not an integer), otherwise `false`. This function acts as a type guard.
+Returns `true` if `target` is a finite floating-point number (not an integer), otherwise `false`.
 
 #### Example
 
@@ -480,10 +480,10 @@ pipe(5, Number.isInRange(5, 10)); // true
 ### isInt
 
 ```ts
-function Number.isInt<T>(value: T): value is Int<T>
+function Number.isInt(target: number): boolean
 ```
 
-Returns `true` if `value` is an integer, otherwise `false`. This function acts as a type guard.
+Returns `true` if `target` is an integer, otherwise `false`.
 
 #### Example
 
