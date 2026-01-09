@@ -249,6 +249,131 @@ pipe(2, Number.exp(3)); // 8
 pipe(5, Number.exp(2)); // 25
 ```
 
+### finiteOr
+
+```ts
+function Number.finiteOr<T, U>(
+    target: T,
+    or: U,
+): Extract<T, number> | U
+```
+
+Returns the numeric value of `target` if it's a finite number, otherwise returns the fallback value `or`.
+
+#### Example
+
+```ts [data-first]
+import { Number } from "@monstermann/number";
+
+Number.finiteOr(42, 0); // 42
+Number.finiteOr(3.14, 0); // 3.14
+Number.finiteOr(-7, 0); // -7
+Number.finiteOr(NaN, 0); // 0
+Number.finiteOr(Infinity, 0); // 0
+Number.finiteOr("hello", 0); // 0
+```
+
+```ts [data-last]
+import { Number } from "@monstermann/number";
+
+pipe(42, Number.finiteOr(0)); // 42
+pipe(3.14, Number.finiteOr(0)); // 3.14
+pipe(-7, Number.finiteOr(0)); // -7
+pipe(NaN, Number.finiteOr(0)); // 0
+pipe(Infinity, Number.finiteOr(0)); // 0
+pipe("hello", Number.finiteOr(0)); // 0
+```
+
+### finiteOrElse
+
+```ts
+function Number.finiteOrElse<T, U>(
+    target: T,
+    orElse: (value: NoInfer<T>) => U,
+): Extract<T, number> | U
+```
+
+Returns the numeric value of `target` if it's a finite number, otherwise calls the `orElse` function with the original value and returns its result.
+
+#### Example
+
+```ts [data-first]
+import { Number } from "@monstermann/number";
+
+Number.finiteOrElse(42, () => 0); // 42
+Number.finiteOrElse(3.14, () => 0); // 3.14
+Number.finiteOrElse(-7, () => 0); // -7
+Number.finiteOrElse(NaN, () => 0); // 0
+Number.finiteOrElse(Infinity, (val) => 100); // 100
+Number.finiteOrElse("hello", (val) => val.length); // 5
+```
+
+```ts [data-last]
+import { Number } from "@monstermann/number";
+
+pipe(
+    42,
+    Number.finiteOrElse(() => 0),
+); // 42
+
+pipe(
+    3.14,
+    Number.finiteOrElse(() => 0),
+); // 3.14
+
+pipe(
+    -7,
+    Number.finiteOrElse(() => 0),
+); // -7
+
+pipe(
+    NaN,
+    Number.finiteOrElse(() => 0),
+); // 0
+
+pipe(
+    Infinity,
+    Number.finiteOrElse((val) => 100),
+); // 100
+
+pipe(
+    "hello",
+    Number.finiteOrElse((val) => val.length),
+); // 5
+```
+
+### finiteOrThrow
+
+```ts
+function Number.finiteOrThrow<T>(target: T): Extract<T, number>
+```
+
+Returns the numeric value of `target` if it's a finite number, otherwise throws an error.
+
+#### Example
+
+```ts [data-first]
+import { Number } from "@monstermann/number";
+
+Number.finiteOrThrow(42); // 42
+Number.finiteOrThrow(3.14); // 3.14
+Number.finiteOrThrow(-7); // -7
+Number.finiteOrThrow(NaN); // throws Error
+Number.finiteOrThrow(Infinity); // throws Error
+Number.finiteOrThrow("hello"); // throws Error
+```
+
+```ts [data-last]
+import { Number } from "@monstermann/number";
+
+pipe(42, Number.finiteOrThrow()); // 42
+pipe(3.14, Number.finiteOrThrow()); // 3.14
+pipe(-7, Number.finiteOrThrow()); // -7
+pipe(NaN, Number.finiteOrThrow()); // throws Error
+pipe(Infinity, Number.finiteOrThrow()); // throws Error
+pipe("hello", Number.finiteOrThrow()); // throws Error
+```
+
 ### floatOr
 
 ```ts

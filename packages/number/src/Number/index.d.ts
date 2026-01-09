@@ -10,6 +10,9 @@ import { clamp } from "./clamp.js";
 import { create } from "./create.js";
 import { div } from "./div.js";
 import { exp } from "./exp.js";
+import { finiteOr } from "./finiteOr.js";
+import { finiteOrElse } from "./finiteOrElse.js";
+import { finiteOrThrow } from "./finiteOrThrow.js";
 import { floatOr } from "./floatOr.js";
 import { floatOrElse } from "./floatOrElse.js";
 import { floatOrThrow } from "./floatOrThrow.js";
@@ -48,6 +51,9 @@ declare namespace Number {
         create,
         div,
         exp,
+        finiteOr,
+        finiteOrElse,
+        finiteOrThrow,
         floatOr,
         floatOrElse,
         floatOrThrow,
