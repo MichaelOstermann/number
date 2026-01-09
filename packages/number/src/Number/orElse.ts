@@ -10,7 +10,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * ): Extract<T, number> | U
  * ```
  *
- * Returns the numeric value of `target` if it's a finite number, otherwise calls the `orElse` function with the original value and returns its result.
+ * Returns the numeric value of `target` if it's a number, otherwise calls the `orElse` function with the original value and returns its result.
  *
  * ## Example
  *
@@ -18,8 +18,8 @@ import { dfdlT } from "@monstermann/dfdl"
  * import { Number } from "@monstermann/number";
  *
  * Number.orElse(42, () => 0); // 42
- * Number.orElse(NaN, () => 0); // 0
- * Number.orElse(Infinity, (val) => `Not finite: ${val}`); // "Not finite: Infinity"
+ * Number.orElse(NaN, () => 0); // NaN
+ * Number.orElse(Infinity, (val) => 100); // Infinity
  * Number.orElse("hello", (val) => val.length); // 5
  * ```
  *
@@ -34,12 +34,12 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe(
  *     NaN,
  *     Number.orElse(() => 0),
- * ); // 0
+ * ); // NaN
  *
  * pipe(
  *     Infinity,
- *     Number.orElse((val) => `Not finite: ${val}`),
- * ); // "Not finite: Infinity"
+ *     Number.orElse((val) => 100),
+ * ); // Infinity
  *
  * pipe(
  *     "hello",
@@ -52,7 +52,7 @@ export const orElse: {
     <T, U>(orElse: (value: NoInfer<T>) => U): (target: T) => Extract<T, number> | U
     <T, U>(target: T, orElse: (value: NoInfer<T>) => U): Extract<T, number> | U
 } = dfdlT(<T, U>(target: T, orElse: (value: NoInfer<T>) => U): Extract<T, number> | U => {
-    return Number.isFinite(target)
+    return typeof target === "number"
         ? target as Extract<T, number>
         : orElse(target)
 }, 2)

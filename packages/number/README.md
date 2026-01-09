@@ -672,7 +672,7 @@ pipe(7, Number.mul(2)); // 14
 function Number.or<T, U>(target: T, or: U): Extract<T, number> | U
 ```
 
-Returns the numeric value of `target` if it's a finite number, otherwise returns the fallback value `or`.
+Returns the numeric value of `target` if it's a number, otherwise returns the fallback value `or`.
 
 #### Example
 
@@ -680,8 +680,8 @@ Returns the numeric value of `target` if it's a finite number, otherwise returns
 import { Number } from "@monstermann/number";
 
 Number.or(42, 0); // 42
-Number.or(NaN, 0); // 0
-Number.or(Infinity, 0); // 0
+Number.or(NaN, 0); // NaN
+Number.or(Infinity, 0); // Infinity
 Number.or("hello", 0); // 0
 ```
 
@@ -689,8 +689,8 @@ Number.or("hello", 0); // 0
 import { Number } from "@monstermann/number";
 
 pipe(42, Number.or(0)); // 42
-pipe(NaN, Number.or(0)); // 0
-pipe(Infinity, Number.or(0)); // 0
+pipe(NaN, Number.or(0)); // NaN
+pipe(Infinity, Number.or(0)); // Infinity
 pipe("hello", Number.or(0)); // 0
 ```
 
@@ -703,7 +703,7 @@ function Number.orElse<T, U>(
 ): Extract<T, number> | U
 ```
 
-Returns the numeric value of `target` if it's a finite number, otherwise calls the `orElse` function with the original value and returns its result.
+Returns the numeric value of `target` if it's a number, otherwise calls the `orElse` function with the original value and returns its result.
 
 #### Example
 
@@ -711,8 +711,8 @@ Returns the numeric value of `target` if it's a finite number, otherwise calls t
 import { Number } from "@monstermann/number";
 
 Number.orElse(42, () => 0); // 42
-Number.orElse(NaN, () => 0); // 0
-Number.orElse(Infinity, (val) => `Not finite: ${val}`); // "Not finite: Infinity"
+Number.orElse(NaN, () => 0); // NaN
+Number.orElse(Infinity, (val) => 100); // Infinity
 Number.orElse("hello", (val) => val.length); // 5
 ```
 
@@ -727,12 +727,12 @@ pipe(
 pipe(
     NaN,
     Number.orElse(() => 0),
-); // 0
+); // NaN
 
 pipe(
     Infinity,
-    Number.orElse((val) => `Not finite: ${val}`),
-); // "Not finite: Infinity"
+    Number.orElse((val) => 100),
+); // Infinity
 
 pipe(
     "hello",
@@ -746,7 +746,7 @@ pipe(
 function Number.orThrow<T>(target: T): Extract<T, number>
 ```
 
-Returns the numeric value of `target` if it's a finite number, otherwise throws an error.
+Returns the numeric value of `target` if it's a number, otherwise throws an error.
 
 #### Example
 
@@ -754,8 +754,8 @@ Returns the numeric value of `target` if it's a finite number, otherwise throws 
 import { Number } from "@monstermann/number";
 
 Number.orThrow(42); // 42
-Number.orThrow(NaN); // throws FnError
-Number.orThrow(Infinity); // throws FnError
+Number.orThrow(NaN); // NaN
+Number.orThrow(Infinity); // Infinity
 Number.orThrow("hello"); // throws FnError
 ```
 
@@ -763,8 +763,8 @@ Number.orThrow("hello"); // throws FnError
 import { Number } from "@monstermann/number";
 
 pipe(42, Number.orThrow()); // 42
-pipe(NaN, Number.orThrow()); // throws FnError
-pipe(Infinity, Number.orThrow()); // throws FnError
+pipe(NaN, Number.orThrow()); // NaN
+pipe(Infinity, Number.orThrow()); // Infinity
 pipe("hello", Number.orThrow()); // throws FnError
 ```
 

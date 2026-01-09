@@ -7,7 +7,7 @@ function Number.orElse<T, U>(
 ): Extract<T, number> | U
 ```
 
-Returns the numeric value of `target` if it's a finite number, otherwise calls the `orElse` function with the original value and returns its result.
+Returns the numeric value of `target` if it's a number, otherwise calls the `orElse` function with the original value and returns its result.
 
 ## Example
 
@@ -17,8 +17,8 @@ Returns the numeric value of `target` if it's a finite number, otherwise calls t
 import { Number } from "@monstermann/number";
 
 Number.orElse(42, () => 0); // 42
-Number.orElse(NaN, () => 0); // 0
-Number.orElse(Infinity, (val) => `Not finite: ${val}`); // "Not finite: Infinity"
+Number.orElse(NaN, () => 0); // NaN
+Number.orElse(Infinity, (val) => 100); // Infinity
 Number.orElse("hello", (val) => val.length); // 5
 ```
 
@@ -33,12 +33,12 @@ pipe(
 pipe(
     NaN,
     Number.orElse(() => 0),
-); // 0
+); // NaN
 
 pipe(
     Infinity,
-    Number.orElse((val) => `Not finite: ${val}`),
-); // "Not finite: Infinity"
+    Number.orElse((val) => 100),
+); // Infinity
 
 pipe(
     "hello",
