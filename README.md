@@ -2,7 +2,7 @@
 
 <h1>number</h1>
 
-![Minified](https://img.shields.io/badge/Minified-2.31_KB-blue?style=flat-square&labelColor=%2315161D&color=%2369a1ff) ![Minzipped](https://img.shields.io/badge/Minzipped-798_B-blue?style=flat-square&labelColor=%2315161D&color=%2369a1ff)
+![Minified](https://img.shields.io/badge/Minified-3.10_KB-blue?style=flat-square&labelColor=%2315161D&color=%2369a1ff) ![Minzipped](https://img.shields.io/badge/Minzipped-936_B-blue?style=flat-square&labelColor=%2315161D&color=%2369a1ff)
 
 **Functional utilities for numbers.**
 
