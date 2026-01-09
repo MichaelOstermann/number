@@ -19,7 +19,6 @@ import { isFinite } from "./isFinite.js";
 import { isFloat } from "./isFloat.js";
 import { isInRange } from "./isInRange.js";
 import { isInt } from "./isInt.js";
-import { isNotFinite } from "./isNotFinite.js";
 import { limitPrecision } from "./limitPrecision.js";
 import { lt } from "./lt.js";
 import { lte } from "./lte.js";
@@ -51,7 +50,6 @@ export const Number = {
     isFloat,
     isInRange,
     isInt,
-    isNotFinite,
     limitPrecision,
     lt,
     lte,

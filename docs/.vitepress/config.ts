@@ -44,7 +44,6 @@ export default defineConfig({
                     { link: "isFloat", text: "isFloat" },
                     { link: "isInRange", text: "isInRange" },
                     { link: "isInt", text: "isInt" },
-                    { link: "isNotFinite", text: "isNotFinite" },
                     { link: "limitPrecision", text: "limitPrecision" },
                     { link: "lt", text: "lt" },
                     { link: "lte", text: "lte" },

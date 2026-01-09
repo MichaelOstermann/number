@@ -1,1 +1,1 @@
-export * from "./Number/index"
+export * from "./Number/index";
