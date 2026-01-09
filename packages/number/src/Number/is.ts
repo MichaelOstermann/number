@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.is(target)`
+ * # is
+ *
+ * ```ts
+ * function Number.is(target: unknown): target is number
+ * ```
  *
  * Returns `true` if `target` is a number, otherwise `false`. This function acts as a type guard.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.is(42); // true
@@ -18,7 +22,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.is(null); // false
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(42, Number.is()); // true
@@ -28,6 +32,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe("123", Number.is()); // false
  * pipe(null, Number.is()); // false
  * ```
+ *
  */
 export const is: {
     (): (target: unknown) => target is number

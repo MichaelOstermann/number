@@ -1,6 +1,8 @@
 # lt
 
-`Number.lt(target, source)`
+```ts
+function Number.lt(target: number, source: number): boolean
+```
 
 Returns `true` if `target` is less than `source`, otherwise `false`.
 

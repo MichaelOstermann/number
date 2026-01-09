@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.toString(target)`
+ * # toString
+ *
+ * ```ts
+ * function Number.toString(target: number): string
+ * ```
  *
  * Converts `target` to a string representation.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.toString(42); // "42"
@@ -16,7 +20,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.toString(Infinity); // "Infinity"
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(42, Number.toString()); // "42"
@@ -24,6 +28,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe(NaN, Number.toString()); // "NaN"
  * pipe(Infinity, Number.toString()); // "Infinity"
  * ```
+ *
  */
 export const toString: {
     (): (target: number) => string

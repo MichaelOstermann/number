@@ -1,6 +1,8 @@
 # randomInt
 
-`Number.randomInt(start, end)`
+```ts
+function Number.randomInt(start: number, end: number): number
+```
 
 Returns a random integer within the range between `start` and `end` (inclusive). The order of `start` and `end` does not matter.
 

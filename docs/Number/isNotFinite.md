@@ -1,6 +1,8 @@
 # isNotFinite
 
-`Number.isNotFinite(target)`
+```ts
+function Number.isNotFinite(target: number): boolean
+```
 
 Returns `true` if `target` is not a finite number, otherwise `false`.
 

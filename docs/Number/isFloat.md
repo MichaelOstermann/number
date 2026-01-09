@@ -1,6 +1,8 @@
 # isFloat
 
-`Number.isFloat(value)`
+```ts
+function Number.isFloat<T>(value: T): value is Float<T>
+```
 
 Returns `true` if `value` is a finite floating-point number (not an integer), otherwise `false`. This function acts as a type guard.
 

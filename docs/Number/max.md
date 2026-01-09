@@ -1,6 +1,8 @@
 # max
 
-`Number.max(target, source)`
+```ts
+function Number.max(target: number, source: number): number
+```
 
 Returns the larger of `target` and `source`.
 

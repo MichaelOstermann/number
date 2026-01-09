@@ -1,6 +1,8 @@
 # round
 
-`Number.round(target)`
+```ts
+function Number.round(target: number): number
+```
 
 Returns `target` rounded to the nearest integer.
 

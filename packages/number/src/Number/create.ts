@@ -1,5 +1,9 @@
 /**
- * `Number.create(target)`
+ * # create
+ *
+ * ```ts
+ * function Number.create(target?: any): number
+ * ```
  *
  * An alias for `Number(target)`.
  *
@@ -12,6 +16,7 @@
  *
  * Number.create("10"); // 10
  * ```
+ *
  */
 export function create(target?: any): number {
     return globalThis.Number(target)

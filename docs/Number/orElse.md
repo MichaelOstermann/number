@@ -1,6 +1,11 @@
 # orElse
 
-`Number.orElse(target, orElse)`
+```ts
+function Number.orElse<T, U>(
+    target: T,
+    orElse: (value: NoInfer<T>) => U,
+): Extract<T, number> | U
+```
 
 Returns the numeric value of `target` if it's a finite number, otherwise calls the `orElse` function with the original value and returns its result.
 

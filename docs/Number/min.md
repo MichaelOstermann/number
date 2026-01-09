@@ -1,6 +1,8 @@
 # min
 
-`Number.min(target, source)`
+```ts
+function Number.min(target: number, source: number): number
+```
 
 Returns the smaller of `target` and `source`.
 

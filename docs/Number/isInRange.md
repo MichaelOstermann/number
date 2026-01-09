@@ -1,6 +1,12 @@
 # isInRange
 
-`Number.isInRange(target, start, end)`
+```ts
+function Number.isInRange(
+    target: number,
+    start: number,
+    end: number,
+): boolean
+```
 
 Returns `true` if `target` is within the range between `start` and `end` (inclusive), otherwise `false`. The order of `start` and `end` does not matter.
 

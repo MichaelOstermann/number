@@ -1,6 +1,8 @@
 # div
 
-`Number.div(target, source)`
+```ts
+function Number.div(target: number, source: number): number
+```
 
 Divides `target` by `source` and returns the result.
 

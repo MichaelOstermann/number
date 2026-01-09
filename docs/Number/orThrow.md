@@ -1,6 +1,8 @@
 # orThrow
 
-`Number.orThrow(target)`
+```ts
+function Number.orThrow<T>(target: T): Extract<T, number>
+```
 
 Returns the numeric value of `target` if it's a finite number, otherwise throws an error.
 

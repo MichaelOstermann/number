@@ -1,6 +1,8 @@
 # isBigInt
 
-`Number.isBigInt(target)`
+```ts
+function Number.isBigInt(target: unknown): target is bigint
+```
 
 Returns `true` if `target` is a bigint, otherwise `false`. This function acts as a type guard.
 

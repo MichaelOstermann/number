@@ -1,6 +1,8 @@
 # lte
 
-`Number.lte(target, source)`
+```ts
+function Number.lte(target: number, source: number): boolean
+```
 
 Returns `true` if `target` is less than or equal to `source`, otherwise `false`.
 

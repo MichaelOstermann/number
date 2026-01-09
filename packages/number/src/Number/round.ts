@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.round(target)`
+ * # round
+ *
+ * ```ts
+ * function Number.round(target: number): number
+ * ```
  *
  * Returns `target` rounded to the nearest integer.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.round(4.3); // 4
@@ -16,7 +20,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.round(-4.7); // -5
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(4.3, Number.round()); // 4
@@ -24,6 +28,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe(-4.3, Number.round()); // -4
  * pipe(-4.7, Number.round()); // -5
  * ```
+ *
  */
 export const round: {
     (): (target: number) => number

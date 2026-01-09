@@ -10,13 +10,17 @@ type Int<T> = T extends unknown
     : never
 
 /**
- * `Number.isInt(value)`
+ * # isInt
+ *
+ * ```ts
+ * function Number.isInt<T>(value: T): value is Int<T>
+ * ```
  *
  * Returns `true` if `value` is an integer, otherwise `false`. This function acts as a type guard.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.isInt(42); // true
@@ -27,7 +31,7 @@ type Int<T> = T extends unknown
  * Number.isInt(Infinity); // false
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(42, Number.isInt()); // true
@@ -37,6 +41,7 @@ type Int<T> = T extends unknown
  * pipe(NaN, Number.isInt()); // false
  * pipe(Infinity, Number.isInt()); // false
  * ```
+ *
  */
 export const isInt: {
     <T>(): (value: T) => value is Int<T>

@@ -1,6 +1,8 @@
 # add
 
-`Number.add(target, source)`
+```ts
+function Number.add(target: number, source: number): number
+```
 
 Adds `source` to `target` and returns the result.
 

@@ -1,6 +1,12 @@
 # clamp
 
-`Number.clamp(value, min, max)`
+```ts
+function Number.clamp(
+    value: number,
+    min: number,
+    max: number,
+): number
+```
 
 Constrains `value` to be between `min` and `max` (inclusive).
 

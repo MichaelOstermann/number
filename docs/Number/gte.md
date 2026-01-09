@@ -1,6 +1,8 @@
 # gte
 
-`Number.gte(target, source)`
+```ts
+function Number.gte(target: number, source: number): boolean
+```
 
 Returns `true` if `target` is greater than or equal to `source`, otherwise `false`.
 

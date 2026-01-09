@@ -1,6 +1,8 @@
 # create
 
-`Number.create(target)`
+```ts
+function Number.create(target?: any): number
+```
 
 An alias for `Number(target)`.
 

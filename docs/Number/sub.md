@@ -1,6 +1,8 @@
 # sub
 
-`Number.sub(target, source)`
+```ts
+function Number.sub(target: number, source: number): number
+```
 
 Subtracts `source` from `target` and returns the result.
 

@@ -1,6 +1,11 @@
 # limitPrecision
 
-`Number.limitPrecision(target, precision)`
+```ts
+function Number.limitPrecision(
+    target: number,
+    precision: number,
+): number
+```
 
 Rounds `target` to the specified number of decimal places defined by `precision`.
 

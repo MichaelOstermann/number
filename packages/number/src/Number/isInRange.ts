@@ -1,13 +1,21 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.isInRange(target, start, end)`
+ * # isInRange
+ *
+ * ```ts
+ * function Number.isInRange(
+ *     target: number,
+ *     start: number,
+ *     end: number,
+ * ): boolean
+ * ```
  *
  * Returns `true` if `target` is within the range between `start` and `end` (inclusive), otherwise `false`. The order of `start` and `end` does not matter.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.isInRange(5, 1, 10); // true
@@ -16,7 +24,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.isInRange(5, 5, 10); // true
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(5, Number.isInRange(1, 10)); // true
@@ -24,6 +32,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe(5, Number.isInRange(10, 1)); // true
  * pipe(5, Number.isInRange(5, 10)); // true
  * ```
+ *
  */
 export const isInRange: {
     (start: number, end: number): (target: number) => boolean

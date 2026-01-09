@@ -1,6 +1,8 @@
 # gt
 
-`Number.gt(target, source)`
+```ts
+function Number.gt(target: number, source: number): boolean
+```
 
 Returns `true` if `target` is greater than `source`, otherwise `false`.
 

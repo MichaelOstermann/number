@@ -1,6 +1,8 @@
 # floor
 
-`Number.floor(target)`
+```ts
+function Number.floor(target: number): number
+```
 
 Returns the largest integer less than or equal to `target`.
 

@@ -1,6 +1,8 @@
 # ceil
 
-`Number.ceil(target)`
+```ts
+function Number.ceil(target: number): number
+```
 
 Returns the smallest integer greater than or equal to `target`.
 

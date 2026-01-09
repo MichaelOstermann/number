@@ -1,6 +1,8 @@
 # toString
 
-`Number.toString(target)`
+```ts
+function Number.toString(target: number): string
+```
 
 Converts `target` to a string representation.
 

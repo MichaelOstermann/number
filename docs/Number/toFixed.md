@@ -1,6 +1,8 @@
 # toFixed
 
-`Number.toFixed(target, length)`
+```ts
+function Number.toFixed(target: number, length: number): string
+```
 
 Returns a string representation of `target` formatted with exactly `length` digits after the decimal point.
 

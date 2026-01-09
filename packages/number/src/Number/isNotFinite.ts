@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.isNotFinite(target)`
+ * # isNotFinite
+ *
+ * ```ts
+ * function Number.isNotFinite(target: number): boolean
+ * ```
  *
  * Returns `true` if `target` is not a finite number, otherwise `false`.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.isNotFinite(Infinity); // true
@@ -17,7 +21,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.isNotFinite(3.14); // false
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(Infinity, Number.isNotFinite()); // true
@@ -26,6 +30,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe(42, Number.isNotFinite()); // false
  * pipe(3.14, Number.isNotFinite()); // false
  * ```
+ *
  */
 export const isNotFinite: {
     (): (target: number) => boolean

@@ -1,6 +1,8 @@
 # mul
 
-`Number.mul(target, source)`
+```ts
+function Number.mul(target: number, source: number): number
+```
 
 Multiplies `target` by `source` and returns the result.
 

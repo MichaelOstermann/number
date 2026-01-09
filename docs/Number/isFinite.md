@@ -1,6 +1,8 @@
 # isFinite
 
-`Number.isFinite(target)`
+```ts
+function Number.isFinite(target: number): boolean
+```
 
 Returns `true` if `target` is a finite number, otherwise `false`.
 

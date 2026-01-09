@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.lte(target, source)`
+ * # lte
+ *
+ * ```ts
+ * function Number.lte(target: number, source: number): boolean
+ * ```
  *
  * Returns `true` if `target` is less than or equal to `source`, otherwise `false`.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.lte(3, 5); // true
@@ -15,13 +19,14 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.lte(4, 4); // true
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(3, Number.lte(5)); // true
  * pipe(7, Number.lte(2)); // false
  * pipe(4, Number.lte(4)); // true
  * ```
+ *
  */
 export const lte: {
     (source: number): (target: number) => boolean

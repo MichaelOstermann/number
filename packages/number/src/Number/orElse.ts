@@ -1,13 +1,20 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.orElse(target, orElse)`
+ * # orElse
+ *
+ * ```ts
+ * function Number.orElse<T, U>(
+ *     target: T,
+ *     orElse: (value: NoInfer<T>) => U,
+ * ): Extract<T, number> | U
+ * ```
  *
  * Returns the numeric value of `target` if it's a finite number, otherwise calls the `orElse` function with the original value and returns its result.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.orElse(42, () => 0); // 42
@@ -16,7 +23,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.orElse("hello", (val) => val.length); // 5
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(
@@ -39,6 +46,7 @@ import { dfdlT } from "@monstermann/dfdl"
  *     Number.orElse((val) => val.length),
  * ); // 5
  * ```
+ *
  */
 export const orElse: {
     <T, U>(orElse: (value: NoInfer<T>) => U): (target: T) => Extract<T, number> | U

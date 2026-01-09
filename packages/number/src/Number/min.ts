@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.min(target, source)`
+ * # min
+ *
+ * ```ts
+ * function Number.min(target: number, source: number): number
+ * ```
  *
  * Returns the smaller of `target` and `source`.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.min(5, 3); // 3
@@ -15,13 +19,14 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.min(4, 4); // 4
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(5, Number.min(3)); // 3
  * pipe(2, Number.min(7)); // 2
  * pipe(4, Number.min(4)); // 4
  * ```
+ *
  */
 export const min: {
     (source: number): (target: number) => number

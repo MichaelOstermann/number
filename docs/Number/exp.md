@@ -1,6 +1,8 @@
 # exp
 
-`Number.exp(target, source)`
+```ts
+function Number.exp(target: number, source: number): number
+```
 
 Raises `target` to the power of `source` and returns the result.
 

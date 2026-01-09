@@ -1,6 +1,8 @@
 # isInt
 
-`Number.isInt(value)`
+```ts
+function Number.isInt<T>(value: T): value is Int<T>
+```
 
 Returns `true` if `value` is an integer, otherwise `false`. This function acts as a type guard.
 

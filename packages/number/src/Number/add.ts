@@ -1,23 +1,28 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.add(target, source)`
+ * # add
+ *
+ * ```ts
+ * function Number.add(target: number, source: number): number
+ * ```
  *
  * Adds `source` to `target` and returns the result.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.add(5, 3); // 8
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(5, Number.add(3)); // 8
  * ```
+ *
  */
 export const add: {
     (source: number): (target: number) => number

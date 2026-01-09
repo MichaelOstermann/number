@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.or(target, or)`
+ * # or
+ *
+ * ```ts
+ * function Number.or<T, U>(target: T, or: U): Extract<T, number> | U
+ * ```
  *
  * Returns the numeric value of `target` if it's a finite number, otherwise returns the fallback value `or`.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.or(42, 0); // 42
@@ -16,7 +20,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.or("hello", 0); // 0
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(42, Number.or(0)); // 42
@@ -24,6 +28,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe(Infinity, Number.or(0)); // 0
  * pipe("hello", Number.or(0)); // 0
  * ```
+ *
  */
 export const or: {
     <U>(or: U): <T>(target: T) => Extract<T, number> | U

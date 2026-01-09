@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.gte(target, source)`
+ * # gte
+ *
+ * ```ts
+ * function Number.gte(target: number, source: number): boolean
+ * ```
  *
  * Returns `true` if `target` is greater than or equal to `source`, otherwise `false`.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.gte(5, 3); // true
@@ -15,13 +19,14 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.gte(4, 4); // true
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(5, Number.gte(3)); // true
  * pipe(2, Number.gte(7)); // false
  * pipe(4, Number.gte(4)); // true
  * ```
+ *
  */
 export const gte: {
     (source: number): (target: number) => boolean

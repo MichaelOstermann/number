@@ -1,6 +1,8 @@
 # or
 
-`Number.or(target, or)`
+```ts
+function Number.or<T, U>(target: T, or: U): Extract<T, number> | U
+```
 
 Returns the numeric value of `target` if it's a finite number, otherwise returns the fallback value `or`.
 

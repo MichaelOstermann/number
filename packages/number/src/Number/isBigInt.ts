@@ -1,13 +1,17 @@
 import { dfdlT } from "@monstermann/dfdl"
 
 /**
- * `Number.isBigInt(target)`
+ * # isBigInt
+ *
+ * ```ts
+ * function Number.isBigInt(target: unknown): target is bigint
+ * ```
  *
  * Returns `true` if `target` is a bigint, otherwise `false`. This function acts as a type guard.
  *
  * ## Example
  *
- * ```ts
+ * ```ts [data-first]
  * import { Number } from "@monstermann/number";
  *
  * Number.isBigInt(123n); // true
@@ -16,7 +20,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * Number.isBigInt(null); // false
  * ```
  *
- * ```ts
+ * ```ts [data-last]
  * import { Number } from "@monstermann/number";
  *
  * pipe(123n, Number.isBigInt()); // true
@@ -24,6 +28,7 @@ import { dfdlT } from "@monstermann/dfdl"
  * pipe("123", Number.isBigInt()); // false
  * pipe(null, Number.isBigInt()); // false
  * ```
+ *
  */
 export const isBigInt: {
     (): (target: unknown) => target is bigint
