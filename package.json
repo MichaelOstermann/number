@@ -10,7 +10,7 @@
         "docs:build": "vitepress build docs"
     },
     "dependencies": {
-        "eslint": "^9.39.2"
+        "eslint": "^10.0.0"
     },
     "devDependencies": {
         "@monstermann/barrels": "^0.3.0",
