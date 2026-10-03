@@ -1,3 +1,6 @@
+> [!WARNING]
+> This package is no longer maintained. It moved into [`@monstermann/fn`](https://github.com/MichaelOstermann/fn) as the `Num` namespace.
+
 <div align="center">
 
 <h1>number</h1>
